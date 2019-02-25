@@ -24,7 +24,7 @@ public class SNSEndpointController {
     @NotificationMessageMapping
     public void receiveNotification(@NotificationMessage String message, @NotificationSubject String subject) {
         LOGGER.info("Received subject:" + subject);
-        LOGGER.info("REceived message:" + message);
+        LOGGER.info("Received message:" + message);
     }
 
     @NotificationUnsubscribeConfirmationMapping
