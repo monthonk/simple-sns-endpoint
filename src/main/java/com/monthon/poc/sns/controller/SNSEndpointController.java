@@ -17,7 +17,7 @@ public class SNSEndpointController {
     private static final Logger LOGGER = LoggerFactory.getLogger(SNSEndpointController.class);
 
     @NotificationSubscriptionMapping
-    public void confirmSubsctibeMessage(NotificationStatus notificationStatus) {
+    public void confirmSubscribeMessage(NotificationStatus notificationStatus) {
         notificationStatus.confirmSubscription();
     }
 
