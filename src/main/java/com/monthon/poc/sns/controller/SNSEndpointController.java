@@ -1,7 +1,6 @@
 package com.monthon.poc.sns.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.aws.messaging.config.annotation.NotificationMessage;
 import org.springframework.cloud.aws.messaging.config.annotation.NotificationSubject;
 import org.springframework.cloud.aws.messaging.endpoint.NotificationStatus;
@@ -11,10 +10,10 @@ import org.springframework.cloud.aws.messaging.endpoint.annotation.NotificationU
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Slf4j
 @Controller
 @RequestMapping("/topic-subscriber")
 public class SNSEndpointController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(SNSEndpointController.class);
 
     @NotificationSubscriptionMapping
     public void confirmSubscribeMessage(NotificationStatus notificationStatus) {
@@ -23,8 +22,8 @@ public class SNSEndpointController {
 
     @NotificationMessageMapping
     public void receiveNotification(@NotificationMessage String message, @NotificationSubject String subject) {
-        LOGGER.info("Received subject:" + subject);
-        LOGGER.info("Received message:" + message);
+        log.info("Received subject:{}", subject);
+        log.info("Received message:{}", message);
     }
 
     @NotificationUnsubscribeConfirmationMapping
