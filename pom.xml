@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.monthon.poc</groupId>
 	<artifactId>simple-sns-endpoint</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<name>simple-sns-endpoint</name>
 	<description>Demo project for SNS</description>
 
