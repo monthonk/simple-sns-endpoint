@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:11-jre-slim
 
 WORKDIR /usr/src/app
 COPY target/simple-sns-endpoint-*.jar /usr/src/app
