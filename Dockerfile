@@ -1,8 +1,8 @@
 FROM openjdk:11-jre-slim
 
 WORKDIR /usr/src/app
-COPY target/simple-sns-endpoint-*.jar /usr/src/app
-RUN chmod 755 /usr/src/app/simple-sns-endpoint-*.jar
+COPY target/simple-sns-endpoint-*.jar startup.sh /usr/src/app/
+RUN chmod 755 startup.sh
 
 EXPOSE 8080
-ENTRYPOINT java -jar simple-sns-endpoint-*.jar
+ENTRYPOINT /usr/src/app/startup.sh
